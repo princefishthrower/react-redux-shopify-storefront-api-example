@@ -1,44 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React + Redux + Shopify-Buy Boilerplate Code!
 
-## Available Scripts
+To get started, clone this repository:
 
-In the project directory, you can run:
+`git clone https://github.com/frewinchristopher/react-redux-shopify-storefront-api-example.git`
 
-### `npm start`
+This app was bootstrapped with create-react-app, so it should install just fine with:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`npm install`
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+The only thing to do before running is add your Shopify store credentials, both of which are in `index.js` in the `buildClient()` call:
 
-### `npm test`
+```
+const client = Client.buildClient({
+    storefrontAccessToken: 'YOUR_SHOPIFY_STOREFRONT_ACCESS_TOKEN',
+    domain: 'YOUR_MYSHOPIFY_STORE_URL'
+});
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Until you provide proper credentials, you'll see these errors in the console:
+```
+OPTIONS https://your_store_url/api/graphql net::ERR_NAME_NOT_RESOLVED
+localhost/:1 Uncaught (in promise) TypeError: Failed to fetch
+```
 
-### `npm run build`
+Run the development site with:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm run start`
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Build a production version with:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm run build`
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This is all described in detail [in a Medium post that goes step by step through this code base](https://github.com/frewinchristopher/react-redux-shopify-storefront-api-example). I highly suggest reading that so you know what the heck is going on!
