@@ -10,8 +10,8 @@ import './styles/shopify.css';
 
 // build shopify client
 const client = Client.buildClient({
-    storefrontAccessToken: 'YOUR_SHOPIFY_STOREFRONT_ACCESS_TOKEN',
-    domain: 'YOUR_MYSHOPIFY_STORE_URL'
+    storefrontAccessToken: '2a6e3bfb99429c40f650581ec954bc19',
+    domain: 'hemp-house-supply.myshopify.com'
 });
 store.dispatch({type: 'CLIENT_CREATED', payload: client});
 
